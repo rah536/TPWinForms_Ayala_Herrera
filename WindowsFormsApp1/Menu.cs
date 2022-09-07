@@ -21,6 +21,7 @@ namespace WindowsFormsApp1
 
         private void Menu_Load(object sender, EventArgs e)
         {
+            //boton Ver Listado
             ArticuloNegocio negocio = new ArticuloNegocio();
             dgvArticulos.DataSource = negocio.listar();
            
