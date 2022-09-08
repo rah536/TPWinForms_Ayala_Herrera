@@ -19,11 +19,21 @@ namespace WindowsFormsApp1
 
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Menu ventana = new Menu();
+            Listado ventana = new Listado();
             ventana.MdiParent = this;
             ventana.Show();
         }
 
-       
+        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Agregar ventana = new Agregar();
+            ventana.MdiParent = this;
+            ventana.Show();
+        }
     }
 }
