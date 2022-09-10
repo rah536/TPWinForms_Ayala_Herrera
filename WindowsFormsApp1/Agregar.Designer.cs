@@ -29,139 +29,141 @@ namespace WindowsFormsApp1
         /// </summary>
         private void InitializeComponent()
         {
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
+            this.txtCodigo = new System.Windows.Forms.TextBox();
+            this.lblCodigo = new System.Windows.Forms.Label();
+            this.lblDescripcion = new System.Windows.Forms.Label();
+            this.lblNombre = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtDescripcion = new System.Windows.Forms.TextBox();
+            this.cboMarca = new System.Windows.Forms.ComboBox();
+            this.cboCategoria = new System.Windows.Forms.ComboBox();
+            this.lblMarca = new System.Windows.Forms.Label();
+            this.lblCategoria = new System.Windows.Forms.Label();
+            this.lblImagenUrl = new System.Windows.Forms.Label();
+            this.lblPrecio = new System.Windows.Forms.Label();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtImagenUrl = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
-            // textBox1
+            // txtCodigo
             // 
-            this.textBox1.Location = new System.Drawing.Point(142, 83);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(172, 22);
-            this.textBox1.TabIndex = 0;
+            this.txtCodigo.Location = new System.Drawing.Point(142, 83);
+            this.txtCodigo.Name = "txtCodigo";
+            this.txtCodigo.Size = new System.Drawing.Size(172, 22);
+            this.txtCodigo.TabIndex = 0;
             // 
-            // label1
+            // lblCodigo
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(39, 83);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(52, 17);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Codigo";
-            this.label1.Click += new System.EventHandler(this.label1_Click);
+            this.lblCodigo.AutoSize = true;
+            this.lblCodigo.Location = new System.Drawing.Point(39, 83);
+            this.lblCodigo.Name = "lblCodigo";
+            this.lblCodigo.Size = new System.Drawing.Size(52, 17);
+            this.lblCodigo.TabIndex = 1;
+            this.lblCodigo.Text = "Codigo";
+            this.lblCodigo.Click += new System.EventHandler(this.label1_Click);
             // 
-            // label2
+            // lblDescripcion
             // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(39, 187);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(82, 17);
-            this.label2.TabIndex = 2;
-            this.label2.Text = "Descripción";
+            this.lblDescripcion.AutoSize = true;
+            this.lblDescripcion.Location = new System.Drawing.Point(39, 187);
+            this.lblDescripcion.Name = "lblDescripcion";
+            this.lblDescripcion.Size = new System.Drawing.Size(82, 17);
+            this.lblDescripcion.TabIndex = 2;
+            this.lblDescripcion.Text = "Descripción";
             // 
-            // label3
+            // lblNombre
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(39, 136);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(58, 17);
-            this.label3.TabIndex = 3;
-            this.label3.Text = "Nombre";
+            this.lblNombre.AutoSize = true;
+            this.lblNombre.Location = new System.Drawing.Point(39, 136);
+            this.lblNombre.Name = "lblNombre";
+            this.lblNombre.Size = new System.Drawing.Size(58, 17);
+            this.lblNombre.TabIndex = 3;
+            this.lblNombre.Text = "Nombre";
             // 
-            // textBox2
+            // txtNombre
             // 
-            this.textBox2.Location = new System.Drawing.Point(142, 136);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(172, 22);
-            this.textBox2.TabIndex = 4;
+            this.txtNombre.Location = new System.Drawing.Point(142, 136);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(172, 22);
+            this.txtNombre.TabIndex = 4;
             // 
-            // textBox3
+            // txtDescripcion
             // 
-            this.textBox3.Location = new System.Drawing.Point(142, 187);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(172, 22);
-            this.textBox3.TabIndex = 5;
+            this.txtDescripcion.Location = new System.Drawing.Point(142, 187);
+            this.txtDescripcion.Name = "txtDescripcion";
+            this.txtDescripcion.Size = new System.Drawing.Size(172, 22);
+            this.txtDescripcion.TabIndex = 5;
             // 
-            // comboBox1
+            // cboMarca
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(142, 239);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(172, 24);
-            this.comboBox1.TabIndex = 6;
+            this.cboMarca.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboMarca.FormattingEnabled = true;
+            this.cboMarca.Location = new System.Drawing.Point(142, 239);
+            this.cboMarca.Name = "cboMarca";
+            this.cboMarca.Size = new System.Drawing.Size(172, 24);
+            this.cboMarca.TabIndex = 6;
             // 
-            // comboBox2
+            // cboCategoria
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(142, 294);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(172, 24);
-            this.comboBox2.TabIndex = 7;
+            this.cboCategoria.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cboCategoria.FormattingEnabled = true;
+            this.cboCategoria.Location = new System.Drawing.Point(142, 294);
+            this.cboCategoria.Name = "cboCategoria";
+            this.cboCategoria.Size = new System.Drawing.Size(172, 24);
+            this.cboCategoria.TabIndex = 7;
             // 
-            // label4
+            // lblMarca
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(39, 242);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(47, 17);
-            this.label4.TabIndex = 8;
-            this.label4.Text = "Marca";
+            this.lblMarca.AutoSize = true;
+            this.lblMarca.Location = new System.Drawing.Point(39, 242);
+            this.lblMarca.Name = "lblMarca";
+            this.lblMarca.Size = new System.Drawing.Size(47, 17);
+            this.lblMarca.TabIndex = 8;
+            this.lblMarca.Text = "Marca";
             // 
-            // label5
+            // lblCategoria
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(39, 297);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(69, 17);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Categoría";
+            this.lblCategoria.AutoSize = true;
+            this.lblCategoria.Location = new System.Drawing.Point(39, 297);
+            this.lblCategoria.Name = "lblCategoria";
+            this.lblCategoria.Size = new System.Drawing.Size(69, 17);
+            this.lblCategoria.TabIndex = 9;
+            this.lblCategoria.Text = "Categoría";
             // 
-            // label6
+            // lblImagenUrl
             // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(39, 404);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(54, 17);
-            this.label6.TabIndex = 10;
-            this.label6.Text = "Imagen";
+            this.lblImagenUrl.AutoSize = true;
+            this.lblImagenUrl.Location = new System.Drawing.Point(39, 404);
+            this.lblImagenUrl.Name = "lblImagenUrl";
+            this.lblImagenUrl.Size = new System.Drawing.Size(54, 17);
+            this.lblImagenUrl.TabIndex = 10;
+            this.lblImagenUrl.Text = "Imagen";
             // 
-            // label7
+            // lblPrecio
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(39, 350);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(48, 17);
-            this.label7.TabIndex = 11;
-            this.label7.Text = "Precio";
+            this.lblPrecio.AutoSize = true;
+            this.lblPrecio.Location = new System.Drawing.Point(39, 350);
+            this.lblPrecio.Name = "lblPrecio";
+            this.lblPrecio.Size = new System.Drawing.Size(48, 17);
+            this.lblPrecio.TabIndex = 11;
+            this.lblPrecio.Text = "Precio";
             // 
-            // textBox4
+            // txtPrecio
             // 
-            this.textBox4.Location = new System.Drawing.Point(142, 350);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(172, 22);
-            this.textBox4.TabIndex = 12;
+            this.txtPrecio.Location = new System.Drawing.Point(142, 350);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(172, 22);
+            this.txtPrecio.TabIndex = 12;
             // 
-            // textBox5
+            // txtImagenUrl
             // 
-            this.textBox5.Location = new System.Drawing.Point(142, 401);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(172, 22);
-            this.textBox5.TabIndex = 13;
+            this.txtImagenUrl.Location = new System.Drawing.Point(142, 401);
+            this.txtImagenUrl.Name = "txtImagenUrl";
+            this.txtImagenUrl.Size = new System.Drawing.Size(172, 22);
+            this.txtImagenUrl.TabIndex = 13;
             // 
             // label8
             // 
@@ -173,15 +175,16 @@ namespace WindowsFormsApp1
             this.label8.TabIndex = 14;
             this.label8.Text = "AGREGAR ARTÍCULO";
             // 
-            // button1
+            // btnAceptar
             // 
-            this.button1.BackColor = System.Drawing.Color.LightGreen;
-            this.button1.Location = new System.Drawing.Point(216, 455);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(78, 36);
-            this.button1.TabIndex = 15;
-            this.button1.Text = "Aceptar";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAceptar.BackColor = System.Drawing.Color.LightGreen;
+            this.btnAceptar.Location = new System.Drawing.Point(216, 455);
+            this.btnAceptar.Name = "btnAceptar";
+            this.btnAceptar.Size = new System.Drawing.Size(78, 36);
+            this.btnAceptar.TabIndex = 15;
+            this.btnAceptar.Text = "Aceptar";
+            this.btnAceptar.UseVisualStyleBackColor = false;
+            this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
             // 
             // btnCancelar
             // 
@@ -202,24 +205,25 @@ namespace WindowsFormsApp1
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.ClientSize = new System.Drawing.Size(651, 492);
             this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label8);
-            this.Controls.Add(this.textBox5);
-            this.Controls.Add(this.textBox4);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.comboBox2);
-            this.Controls.Add(this.comboBox1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txtImagenUrl);
+            this.Controls.Add(this.txtPrecio);
+            this.Controls.Add(this.lblPrecio);
+            this.Controls.Add(this.lblImagenUrl);
+            this.Controls.Add(this.lblCategoria);
+            this.Controls.Add(this.lblMarca);
+            this.Controls.Add(this.cboCategoria);
+            this.Controls.Add(this.cboMarca);
+            this.Controls.Add(this.txtDescripcion);
+            this.Controls.Add(this.txtNombre);
+            this.Controls.Add(this.lblNombre);
+            this.Controls.Add(this.lblDescripcion);
+            this.Controls.Add(this.lblCodigo);
+            this.Controls.Add(this.txtCodigo);
             this.Name = "Agregar";
             this.Text = "Agregar";
+            this.Load += new System.EventHandler(this.Agregar_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -227,22 +231,22 @@ namespace WindowsFormsApp1
 
         #endregion
 
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.ComboBox comboBox1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtCodigo;
+        private System.Windows.Forms.Label lblCodigo;
+        private System.Windows.Forms.Label lblDescripcion;
+        private System.Windows.Forms.Label lblNombre;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtDescripcion;
+        private System.Windows.Forms.ComboBox cboMarca;
+        private System.Windows.Forms.ComboBox cboCategoria;
+        private System.Windows.Forms.Label lblMarca;
+        private System.Windows.Forms.Label lblCategoria;
+        private System.Windows.Forms.Label lblImagenUrl;
+        private System.Windows.Forms.Label lblPrecio;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtImagenUrl;
         private System.Windows.Forms.Label label8;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
     }
 }
