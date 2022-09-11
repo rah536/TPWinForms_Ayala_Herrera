@@ -22,20 +22,43 @@ namespace WindowsFormsApp1
 
         private void Menu_Load(object sender, EventArgs e)
         {
-            //boton Ver Listado
-            ArticuloNegocio negocio = new ArticuloNegocio();
-            listaArticulos = negocio.listar();
-            dgvArticulos.DataSource = listaArticulos;
-            dgvArticulos.Columns["ImagenUrl"].Visible = false;
-            cargarImagen(listaArticulos[0].ImagenUrl);
+            //cambiar nombre de menu_load a Listado_Load -
+            cargarGrilla();
+        }
 
+        private void cargarGrilla()
+        {
+            ArticuloNegocio negocio = new ArticuloNegocio();
+            try
+            {
+                listaArticulos = negocio.listar();
+                dgvArticulos.DataSource = listaArticulos;
+                ocultarColumnas();
+                cargarImagen(listaArticulos[0].ImagenUrl);
+            }
+            catch (Exception ex)
+            {
+
+                MessageBox.Show(ex.ToString());
+            }
+        }
+
+        private void ocultarColumnas()
+        {
+            dgvArticulos.Columns[0].Visible = false;
+            dgvArticulos.Columns["ImagenUrl"].Visible = false;
+            //dgvArticulos.Columns[1].Visible = false;
+            dgvArticulos.Columns["Precio"].Visible = false;
 
         }
 
         private void dgvArticulos_SelectionChanged(object sender, EventArgs e)
         {
-            Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-            cargarImagen(seleccionado.ImagenUrl);
+            if(dgvArticulos.CurrentRow != null)
+            {
+                Articulo seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                cargarImagen(seleccionado.ImagenUrl);
+            }
         }
 
         private void cargarImagen(string imagen)
@@ -49,6 +72,47 @@ namespace WindowsFormsApp1
 
                 pbxArticulos.Load("https://upload.wikimedia.org/wikipedia/commons/thumb/3/3f/Placeholder_view_vector.svg/681px-Placeholder_view_vector.svg.png");
             }
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            cargarGrilla();
+        }
+
+        private void btnBuscar_Click(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+
+            if (txtFiltro.Text != "")
+            {
+                listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.Codigo.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.CategoriaArticulo.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.MarcaArticulo.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+            }
+            else 
+            {
+                listaFiltrada = listaArticulos;
+            }
+
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaFiltrada;
+            ocultarColumnas();
+        }
+
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
+        {
+            List<Articulo> listaFiltrada;
+
+            if (txtFiltro.Text.Length >= 3)
+            {
+                listaFiltrada = listaArticulos.FindAll(x => x.Nombre.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.Codigo.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.CategoriaArticulo.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()) || x.MarcaArticulo.Descripcion.ToUpper().Contains(txtFiltro.Text.ToUpper()));
+            }
+            else
+            {
+                listaFiltrada = listaArticulos;
+            }
+
+            dgvArticulos.DataSource = null;
+            dgvArticulos.DataSource = listaFiltrada;
+            ocultarColumnas();
         }
     }
 }

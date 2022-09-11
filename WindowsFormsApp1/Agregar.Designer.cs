@@ -46,6 +46,8 @@ namespace WindowsFormsApp1
             this.label8 = new System.Windows.Forms.Label();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.pbAgregar = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pbAgregar)).BeginInit();
             this.SuspendLayout();
             // 
             // txtCodigo
@@ -88,14 +90,14 @@ namespace WindowsFormsApp1
             this.txtNombre.Location = new System.Drawing.Point(142, 136);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(172, 22);
-            this.txtNombre.TabIndex = 4;
+            this.txtNombre.TabIndex = 1;
             // 
             // txtDescripcion
             // 
             this.txtDescripcion.Location = new System.Drawing.Point(142, 187);
             this.txtDescripcion.Name = "txtDescripcion";
             this.txtDescripcion.Size = new System.Drawing.Size(172, 22);
-            this.txtDescripcion.TabIndex = 5;
+            this.txtDescripcion.TabIndex = 2;
             // 
             // cboMarca
             // 
@@ -104,7 +106,7 @@ namespace WindowsFormsApp1
             this.cboMarca.Location = new System.Drawing.Point(142, 239);
             this.cboMarca.Name = "cboMarca";
             this.cboMarca.Size = new System.Drawing.Size(172, 24);
-            this.cboMarca.TabIndex = 6;
+            this.cboMarca.TabIndex = 3;
             // 
             // cboCategoria
             // 
@@ -113,7 +115,7 @@ namespace WindowsFormsApp1
             this.cboCategoria.Location = new System.Drawing.Point(142, 294);
             this.cboCategoria.Name = "cboCategoria";
             this.cboCategoria.Size = new System.Drawing.Size(172, 24);
-            this.cboCategoria.TabIndex = 7;
+            this.cboCategoria.TabIndex = 4;
             // 
             // lblMarca
             // 
@@ -156,14 +158,15 @@ namespace WindowsFormsApp1
             this.txtPrecio.Location = new System.Drawing.Point(142, 350);
             this.txtPrecio.Name = "txtPrecio";
             this.txtPrecio.Size = new System.Drawing.Size(172, 22);
-            this.txtPrecio.TabIndex = 12;
+            this.txtPrecio.TabIndex = 5;
             // 
             // txtImagenUrl
             // 
             this.txtImagenUrl.Location = new System.Drawing.Point(142, 401);
             this.txtImagenUrl.Name = "txtImagenUrl";
             this.txtImagenUrl.Size = new System.Drawing.Size(172, 22);
-            this.txtImagenUrl.TabIndex = 13;
+            this.txtImagenUrl.TabIndex = 6;
+            this.txtImagenUrl.Leave += new System.EventHandler(this.txtImagenUrl_Leave);
             // 
             // label8
             // 
@@ -178,10 +181,10 @@ namespace WindowsFormsApp1
             // btnAceptar
             // 
             this.btnAceptar.BackColor = System.Drawing.Color.LightGreen;
-            this.btnAceptar.Location = new System.Drawing.Point(216, 455);
+            this.btnAceptar.Location = new System.Drawing.Point(236, 455);
             this.btnAceptar.Name = "btnAceptar";
             this.btnAceptar.Size = new System.Drawing.Size(78, 36);
-            this.btnAceptar.TabIndex = 15;
+            this.btnAceptar.TabIndex = 7;
             this.btnAceptar.Text = "Aceptar";
             this.btnAceptar.UseVisualStyleBackColor = false;
             this.btnAceptar.Click += new System.EventHandler(this.btnAceptar_Click);
@@ -189,13 +192,22 @@ namespace WindowsFormsApp1
             // btnCancelar
             // 
             this.btnCancelar.BackColor = System.Drawing.Color.Tomato;
-            this.btnCancelar.Location = new System.Drawing.Point(327, 455);
+            this.btnCancelar.Location = new System.Drawing.Point(368, 455);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(78, 36);
-            this.btnCancelar.TabIndex = 16;
+            this.btnCancelar.TabIndex = 8;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // pbAgregar
+            // 
+            this.pbAgregar.Location = new System.Drawing.Point(373, 148);
+            this.pbAgregar.Name = "pbAgregar";
+            this.pbAgregar.Size = new System.Drawing.Size(276, 219);
+            this.pbAgregar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pbAgregar.TabIndex = 15;
+            this.pbAgregar.TabStop = false;
             // 
             // Agregar
             // 
@@ -203,7 +215,8 @@ namespace WindowsFormsApp1
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
             this.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
-            this.ClientSize = new System.Drawing.Size(651, 492);
+            this.ClientSize = new System.Drawing.Size(706, 492);
+            this.Controls.Add(this.pbAgregar);
             this.Controls.Add(this.btnCancelar);
             this.Controls.Add(this.btnAceptar);
             this.Controls.Add(this.label8);
@@ -224,6 +237,7 @@ namespace WindowsFormsApp1
             this.Name = "Agregar";
             this.Text = "Agregar";
             this.Load += new System.EventHandler(this.Agregar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pbAgregar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -248,5 +262,6 @@ namespace WindowsFormsApp1
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnAceptar;
         private System.Windows.Forms.Button btnCancelar;
+        private System.Windows.Forms.PictureBox pbAgregar;
     }
 }
