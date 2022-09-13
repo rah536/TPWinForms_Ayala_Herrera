@@ -134,6 +134,7 @@ namespace WindowsFormsApp1
             {
                 seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
                 negocio.eliminar(seleccionado.Id);
+                cargarGrilla();
 
             }
             catch (Exception ex)

@@ -19,11 +19,6 @@ namespace WindowsFormsApp1
             InitializeComponent();
         }
 
-        private void label1_Click(object sender, EventArgs e)
-        {
-
-        }
-
         private void button2_Click(object sender, EventArgs e)
         {
             //es el boton CANCELAR
@@ -36,17 +31,28 @@ namespace WindowsFormsApp1
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
-                articulo.Codigo = txtCodigo.Text;
-                articulo.Nombre = txtNombre.Text;
-                articulo.Descripcion = txtDescripcion.Text;
-                articulo.MarcaArticulo = (Marca)cboMarca.SelectedItem;
-                articulo.CategoriaArticulo = (Categoria)cboCategoria.SelectedItem;
-                articulo.Precio = float.Parse(txtPrecio.Text);
-                articulo.ImagenUrl = txtImagenUrl.Text;
+                
 
-                negocio.agregar(articulo);
-                MessageBox.Show("Agregado exitosamente");
-                Close();
+                if(validaciones() == true)
+                {
+                    articulo.Codigo = txtCodigo.Text;
+                    articulo.Nombre = txtNombre.Text;
+                    articulo.Descripcion = txtDescripcion.Text;
+                    articulo.MarcaArticulo = (Marca)cboMarca.SelectedItem;
+                    articulo.CategoriaArticulo = (Categoria)cboCategoria.SelectedItem;
+                    articulo.Precio = float.Parse(txtPrecio.Text);
+                    articulo.ImagenUrl = txtImagenUrl.Text;
+
+                    negocio.agregar(articulo);
+                    MessageBox.Show("Agregado exitosamente");
+                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Compruebe que los campos obligatorios esten completos");
+                }
+
+                
             }
             catch (Exception ex)
             {
@@ -86,6 +92,30 @@ namespace WindowsFormsApp1
         private void txtImagenUrl_Leave(object sender, EventArgs e)
         {
             cargarImagen(txtImagenUrl.Text);
+        }
+
+        private bool validaciones()
+        {
+            if(string.IsNullOrEmpty(txtCodigo.Text) || string.IsNullOrEmpty(txtNombre.Text) || string.IsNullOrEmpty(txtPrecio.Text))
+            {
+                return false;
+            }
+
+            foreach (char item in txtPrecio.Text)
+            {
+                if (!(char.IsNumber(item)))
+                {
+                    MessageBox.Show("Ingresa un valor numerico");
+                    return false;
+                }
+            }
+            return true;
+
+        }
+
+        private void txtPrcio_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }
