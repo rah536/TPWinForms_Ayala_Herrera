@@ -24,10 +24,7 @@ namespace WindowsFormsApp1
             ventana.Show();
         }
 
-        private void modificarToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-
-        }
+      
 
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
@@ -35,6 +32,12 @@ namespace WindowsFormsApp1
             //ventana.MdiParent = this;
             ventana.ShowDialog();
             
+        }
+
+        private void eliminarToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+
         }
     }
 }
