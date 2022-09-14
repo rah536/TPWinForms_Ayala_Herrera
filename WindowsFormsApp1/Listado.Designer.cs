@@ -47,7 +47,7 @@ namespace WindowsFormsApp1
             this.dgvArticulos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvArticulos.EditMode = System.Windows.Forms.DataGridViewEditMode.EditProgrammatically;
             this.dgvArticulos.Location = new System.Drawing.Point(9, 50);
-            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dgvArticulos.Margin = new System.Windows.Forms.Padding(2);
             this.dgvArticulos.MultiSelect = false;
             this.dgvArticulos.Name = "dgvArticulos";
             this.dgvArticulos.RowHeadersWidth = 51;
@@ -60,7 +60,7 @@ namespace WindowsFormsApp1
             // pbxArticulos
             // 
             this.pbxArticulos.Location = new System.Drawing.Point(572, 73);
-            this.pbxArticulos.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.pbxArticulos.Margin = new System.Windows.Forms.Padding(2);
             this.pbxArticulos.Name = "pbxArticulos";
             this.pbxArticulos.Size = new System.Drawing.Size(170, 184);
             this.pbxArticulos.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
@@ -71,7 +71,7 @@ namespace WindowsFormsApp1
             // 
             this.btnActualizar.BackColor = System.Drawing.Color.PaleTurquoise;
             this.btnActualizar.Location = new System.Drawing.Point(496, 18);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnActualizar.Margin = new System.Windows.Forms.Padding(2);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(62, 28);
             this.btnActualizar.TabIndex = 2;
@@ -92,7 +92,7 @@ namespace WindowsFormsApp1
             // btnBuscar
             // 
             this.btnBuscar.Location = new System.Drawing.Point(213, 23);
-            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.btnBuscar.Margin = new System.Windows.Forms.Padding(2);
             this.btnBuscar.Name = "btnBuscar";
             this.btnBuscar.Size = new System.Drawing.Size(66, 20);
             this.btnBuscar.TabIndex = 4;
@@ -103,7 +103,7 @@ namespace WindowsFormsApp1
             // txtFiltro
             // 
             this.txtFiltro.Location = new System.Drawing.Point(46, 23);
-            this.txtFiltro.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.txtFiltro.Margin = new System.Windows.Forms.Padding(2);
             this.txtFiltro.Name = "txtFiltro";
             this.txtFiltro.Size = new System.Drawing.Size(155, 20);
             this.txtFiltro.TabIndex = 5;
@@ -132,10 +132,11 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.pbxArticulos);
             this.Controls.Add(this.dgvArticulos);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Listado";
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterParent;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Articulos";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Menu_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvArticulos)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbxArticulos)).EndInit();
