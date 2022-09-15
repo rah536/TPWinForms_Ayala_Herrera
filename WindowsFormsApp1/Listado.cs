@@ -156,5 +156,16 @@ namespace WindowsFormsApp1
 
             
         }
+
+        private void btnVerDetalle_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            VerDetalle detalle = new VerDetalle();
+            detalle.cargarDetalles(seleccionado);
+            detalle.ShowDialog();
+            
+        }
     }
 }

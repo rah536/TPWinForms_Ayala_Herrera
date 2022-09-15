@@ -20,8 +20,8 @@ namespace WindowsFormsApp1
         private void listarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Listado ventana = new Listado();
-            ventana.MdiParent = this;
-            ventana.Show();
+            //ventana.MdiParent = this;
+            ventana.ShowDialog();
         }
 
       
@@ -29,7 +29,8 @@ namespace WindowsFormsApp1
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Agregar ventana = new Agregar();
-            ventana.MdiParent = this;
+            //dejar comentado! , debe abrir formulario fuera del principal
+            //ventana.MdiParent = this;
             ventana.ShowDialog();
             
         }
