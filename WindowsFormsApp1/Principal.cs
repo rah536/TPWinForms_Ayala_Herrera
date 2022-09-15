@@ -29,7 +29,7 @@ namespace WindowsFormsApp1
         private void agregarToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Agregar ventana = new Agregar();
-            //ventana.MdiParent = this;
+            ventana.MdiParent = this;
             ventana.ShowDialog();
             
         }

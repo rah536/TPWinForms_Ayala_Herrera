@@ -143,5 +143,18 @@ namespace WindowsFormsApp1
                 throw;
             }
         }
+
+        private void modificar_Click(object sender, EventArgs e)
+        {
+            Articulo seleccionado;
+            seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+
+            Agregar modificar = new Agregar(seleccionado);
+
+                //ventana.MdiParent = this;
+                modificar.ShowDialog();
+
+            
+        }
     }
 }

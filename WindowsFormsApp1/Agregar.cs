@@ -14,9 +14,18 @@ namespace WindowsFormsApp1
 {
     public partial class Agregar : Form
     {
+
+        private Articulo articulo = null;
+        public Agregar(Articulo articulo)
+        {
+            InitializeComponent();
+            this.articulo = articulo;
+        }
+
         public Agregar()
         {
             InitializeComponent();
+            
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -69,6 +78,16 @@ namespace WindowsFormsApp1
             {
                 cboMarca.DataSource = marcaNegocio.listar();
                 cboCategoria.DataSource = categoriaNegocio.listar();
+
+                if (articulo != null)
+                {
+                    txtCodigo.Text = articulo.Codigo;
+                    txtNombre.Text = articulo.Nombre;
+                    txtDescripcion.Text = articulo.Descripcion;
+                    txtImagenUrl.Text = articulo.ImagenUrl;
+                    cargarImagen(articulo.ImagenUrl);
+                    txtPrecio.Text = articulo.Precio.ToString();
+                }
             }
             catch (Exception ex)
             {
