@@ -17,7 +17,7 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, C.Id, C.Descripcion as CatDescripcion, M.Id, M.Descripcion as MarDescripcion from Articulos as A Inner Join CATEGORIAS as C On A.IdCategoria = C.Id Inner Join MARCAS as M On M.Id = C.Id");
+                datos.setearConsulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, C.Id, C.Descripcion, c.id, c.descripcion as CatDescripcion, M.Id, M.Descripcion as MarDescripcion from Articulos as A Inner Join CATEGORIAS as C On A.IdCategoria = C.Id Inner Join MARCAS as M On M.Id = C.Id");
                 datos.ejecutarLectura();
 
                 while(datos.Lector.Read())

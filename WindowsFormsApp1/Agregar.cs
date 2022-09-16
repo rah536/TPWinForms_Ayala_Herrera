@@ -77,7 +77,11 @@ namespace WindowsFormsApp1
             try
             {
                 cboMarca.DataSource = marcaNegocio.listar();
+                cboMarca.ValueMember = "Id";
+                cboMarca.DisplayMember = "Descripcion";
                 cboCategoria.DataSource = categoriaNegocio.listar();
+                cboCategoria.ValueMember = "Id";
+                cboCategoria.DisplayMember = "Descripcion";
 
                 if (articulo != null)
                 {
@@ -87,6 +91,8 @@ namespace WindowsFormsApp1
                     txtImagenUrl.Text = articulo.ImagenUrl;
                     cargarImagen(articulo.ImagenUrl);
                     txtPrecio.Text = articulo.Precio.ToString();
+                    cboMarca.SelectedValue = articulo.MarcaArticulo.Id;
+                    cboCategoria.SelectedValue = articulo.CategoriaArticulo.Id;
                 }
             }
             catch (Exception ex)
