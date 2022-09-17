@@ -17,7 +17,8 @@ namespace Negocio
 
             try
             {
-                datos.setearConsulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, C.Id, C.Descripcion, c.id, c.descripcion as CatDescripcion, M.Id, M.Descripcion as MarDescripcion from Articulos as A Inner Join CATEGORIAS as C On A.IdCategoria = C.Id Inner Join MARCAS as M On M.Id = C.Id");
+                //datos.setearConsulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, C.Id, C.Descripcion, c.id, c.descripcion as CatDescripcion, M.Id, M.Descripcion as MarDescripcion from Articulos as A Inner Join CATEGORIAS as C On A.IdCategoria = C.Id Inner Join MARCAS as M On M.Id = C.Id");
+                datos.setearConsulta("Select A.Id, A.Codigo, A.Nombre, A.Descripcion, A.ImagenUrl, A.Precio, A.IdCategoria as CatId, C.Descripcion as CatDescripcion, A.IdMarca as MarId, M.Descripcion as MarDescripcion from Articulos as A Inner Join CATEGORIAS as C On A.IdCategoria = C.Id Inner Join MARCAS as M On M.Id = C.Id");
                 datos.ejecutarLectura();
 
                 while(datos.Lector.Read())
@@ -29,13 +30,16 @@ namespace Negocio
                     aux.Descripcion = (string)datos.Lector["Descripcion"];
                     aux.ImagenUrl = (string)datos.Lector["ImagenUrl"];
                     //aux.Precio = (float)datos.Lector["Precio"];
+                    aux.Precio = (float)Convert.ToDecimal(datos.Lector["Precio"]);
 
-                    //por composicion hay que crear el objeto marca
-                    //aparte, ya que no se crea solo al crear el articulo
+                    //por composicion hay que instanciar Marca aparte
+                    //ya que al instanciar Articulo no se instancia ni Marca ni Categoria
                     aux.MarcaArticulo = new Marca();
+                    aux.MarcaArticulo.Id = (int)datos.Lector["MarId"];
                     aux.MarcaArticulo.Descripcion = (string)datos.Lector["MarDescripcion"];
                     //aca lo mismo pero con categoria
                     aux.CategoriaArticulo = new Categoria();
+                    aux.CategoriaArticulo.Id = (int)datos.Lector["CatId"];
                     aux.CategoriaArticulo.Descripcion = (string)datos.Lector["CatDescripcion"];
 
 

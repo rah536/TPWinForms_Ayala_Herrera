@@ -132,9 +132,14 @@ namespace WindowsFormsApp1
             Articulo seleccionado;
             try
             {
-                seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
-                negocio.eliminar(seleccionado.Id);
-                cargarGrilla();
+                DialogResult respuesta = MessageBox.Show("Desea eliminar el registro?", "Eliminando", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+                if(respuesta == DialogResult.Yes)
+                {
+                    seleccionado = (Articulo)dgvArticulos.CurrentRow.DataBoundItem;
+                    negocio.eliminar(seleccionado.Id);
+                    cargarGrilla();
+                }
+                
 
             }
             catch (Exception ex)

@@ -30,7 +30,6 @@ namespace WindowsFormsApp1
         private void InitializeComponent()
         {
             this.dgvArticulos = new System.Windows.Forms.DataGridView();
-            this.btnActualizar = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.btnBuscar = new System.Windows.Forms.Button();
             this.txtFiltro = new System.Windows.Forms.TextBox();
@@ -58,18 +57,6 @@ namespace WindowsFormsApp1
             this.dgvArticulos.Size = new System.Drawing.Size(731, 281);
             this.dgvArticulos.TabIndex = 0;
             this.dgvArticulos.SelectionChanged += new System.EventHandler(this.dgvArticulos_SelectionChanged);
-            // 
-            // btnActualizar
-            // 
-            this.btnActualizar.BackColor = System.Drawing.Color.PaleTurquoise;
-            this.btnActualizar.Location = new System.Drawing.Point(661, 22);
-            this.btnActualizar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnActualizar.Name = "btnActualizar";
-            this.btnActualizar.Size = new System.Drawing.Size(83, 34);
-            this.btnActualizar.TabIndex = 2;
-            this.btnActualizar.Text = "Actualizar";
-            this.btnActualizar.UseVisualStyleBackColor = false;
-            this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
             // label1
             // 
@@ -155,7 +142,6 @@ namespace WindowsFormsApp1
             this.Controls.Add(this.txtFiltro);
             this.Controls.Add(this.btnBuscar);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.pbxArticulos);
             this.Controls.Add(this.dgvArticulos);
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -174,7 +160,6 @@ namespace WindowsFormsApp1
 
         private System.Windows.Forms.DataGridView dgvArticulos;
         private System.Windows.Forms.PictureBox pbxArticulos;
-        private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnBuscar;
         private System.Windows.Forms.TextBox txtFiltro;
