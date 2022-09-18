@@ -46,44 +46,47 @@ namespace WindowsFormsApp1
             try
             {
 
-
                 if (validaciones() == true)
                 {
-                    if (articulo == null) { articulo = new Articulo(); }
+                    if (articulo == null)
+                    {
 
-                    articulo.Codigo = txtCodigo.Text;
-                    articulo.Nombre = txtNombre.Text;
-                    articulo.Descripcion = txtDescripcion.Text;
-                    articulo.MarcaArticulo = (Marca)cboMarca.SelectedItem;
-                    articulo.CategoriaArticulo = (Categoria)cboCategoria.SelectedItem;
-                    articulo.Precio = float.Parse(txtPrecio.Text);
-                    articulo.ImagenUrl = txtImagenUrl.Text;
-                }
 
-                else
-                {
-                    MessageBox.Show("Compruebe que los campos obligatorios esten completos");
-                }
+                        articulo = new Articulo();
+                    }
+                      
+                        articulo.Codigo = txtCodigo.Text;
+                        articulo.Nombre = txtNombre.Text;
+                        articulo.Descripcion = txtDescripcion.Text;
+                        articulo.MarcaArticulo = (Marca)cboMarca.SelectedItem;
+                        articulo.CategoriaArticulo = (Categoria)cboCategoria.SelectedItem;
+                        articulo.Precio = float.Parse(txtPrecio.Text);
+                        articulo.ImagenUrl = txtImagenUrl.Text;
+                    
 
-                if(articulo.Id != 0 && validaciones() == true)
-                {
-                    negocio.modificar(articulo);
-                    MessageBox.Show("Modificado exitosamente");
-                }
-                else
-                {
-                    MessageBox.Show("Compruebe que los campos obligatorios esten completos");
-                }
-                if (articulo.Id == 0 && validaciones() == true )
-                { 
-                    negocio.agregar(articulo);
-                    MessageBox.Show("Agregado exitosamente");
-                }
-                else
-                {
-                    MessageBox.Show("Compruebe que los campos obligatorios esten completos");
-                }
+                    if (articulo.Id == 0)
+                    {
+                        negocio.agregar(articulo);
+                        MessageBox.Show("Agregado exitosamente");
+
+
+                    }
+
+                    if (articulo.Id != 0)
+                    {
+                        negocio.modificar(articulo);
+                        MessageBox.Show("Modificado exitosamente");
+
+                    }
+
                 Close();
+                }
+                else
+                {
+                    MessageBox.Show("Compruebe que los campos obligatorios esten completos");
+                }
+
+
                
                 
             }
