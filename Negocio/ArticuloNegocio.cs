@@ -34,13 +34,15 @@ namespace Negocio
 
                     //por composicion hay que instanciar Marca aparte
                     //ya que al instanciar Articulo no se instancia ni Marca ni Categoria
+                    
+                    aux.CategoriaArticulo = new Categoria();
+                    aux.CategoriaArticulo.Id = (int)datos.Lector["CatId"];
+                    aux.CategoriaArticulo.Descripcion = (string)datos.Lector["CatDescripcion"];
+
                     aux.MarcaArticulo = new Marca();
                     aux.MarcaArticulo.Id = (int)datos.Lector["MarId"];
                     aux.MarcaArticulo.Descripcion = (string)datos.Lector["MarDescripcion"];
                     //aca lo mismo pero con categoria
-                    aux.CategoriaArticulo = new Categoria();
-                    aux.CategoriaArticulo.Id = (int)datos.Lector["CatId"];
-                    aux.CategoriaArticulo.Descripcion = (string)datos.Lector["CatDescripcion"];
 
 
                     lista.Add(aux);
@@ -71,11 +73,11 @@ namespace Negocio
                 datos.setearConsulta("update ARTICULOS set Codigo = @codigo, Nombre = @nombre, Descripcion = @descripcion, IdMarca = @idMarca, IdCategoria = @idCategoria, ImagenUrl = @imagen where Id = @id");
                 datos.setearParametro("@codigo", articulo.Codigo);
                 datos.setearParametro("@nombre", articulo.Nombre);
-              datos.setearParametro("@descripcion", articulo.Descripcion);
-            datos.setearParametro("@idMarca", articulo.MarcaArticulo.Id);
-             datos.setearParametro("@idCategoria", articulo.CategoriaArticulo.Id);
+                datos.setearParametro("@descripcion", articulo.Descripcion);
+                datos.setearParametro("@idMarca", articulo.MarcaArticulo.Id);
+                datos.setearParametro("@idCategoria", articulo.CategoriaArticulo.Id);
                 datos.setearParametro("@imagen", articulo.ImagenUrl);
-              datos.setearParametro("@id", articulo.Id);
+                datos.setearParametro("@id", articulo.Id);
 
 
                 datos.ejecutarAccion();

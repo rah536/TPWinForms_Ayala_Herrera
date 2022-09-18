@@ -65,15 +65,25 @@ namespace WindowsFormsApp1
                     MessageBox.Show("Compruebe que los campos obligatorios esten completos");
                 }
 
-                    if(articulo.Id != 0) { 
+                if(articulo.Id != 0 && validaciones() == true)
+                {
                     negocio.modificar(articulo);
                     MessageBox.Show("Modificado exitosamente");
-                    }
-                    else { 
+                }
+                else
+                {
+                    MessageBox.Show("Compruebe que los campos obligatorios esten completos");
+                }
+                if (articulo.Id == 0 && validaciones() == true )
+                { 
                     negocio.agregar(articulo);
                     MessageBox.Show("Agregado exitosamente");
-                    }
-                    Close();
+                }
+                else
+                {
+                    MessageBox.Show("Compruebe que los campos obligatorios esten completos");
+                }
+                Close();
                
                 
             }
@@ -93,11 +103,11 @@ namespace WindowsFormsApp1
             try
             {
                 cboMarca.DataSource = marcaNegocio.listar();
-              cboMarca.ValueMember = "Id";
-              cboMarca.DisplayMember = "Descripcion";
+                cboMarca.ValueMember = "Id";
+                cboMarca.DisplayMember = "Descripcion";
                 cboCategoria.DataSource = categoriaNegocio.listar();
-               cboCategoria.ValueMember = "Id";
-               cboCategoria.DisplayMember = "Descripcion";
+                cboCategoria.ValueMember = "Id";
+                cboCategoria.DisplayMember = "Descripcion";
 
                 if (articulo != null)
                 {
@@ -108,8 +118,8 @@ namespace WindowsFormsApp1
                     txtImagenUrl.Text = articulo.ImagenUrl;
                     cargarImagen(articulo.ImagenUrl);
                     txtPrecio.Text = articulo.Precio.ToString();
-                   cboMarca.SelectedValue = articulo.MarcaArticulo.Id;
-                   cboCategoria.SelectedValue = articulo.CategoriaArticulo.Id;
+                    cboMarca.SelectedValue = articulo.MarcaArticulo.Id;
+                    cboCategoria.SelectedValue = articulo.CategoriaArticulo.Id;
                 }
             }
             catch (Exception ex)

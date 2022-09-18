@@ -157,7 +157,8 @@ namespace WindowsFormsApp1
             Agregar modificar = new Agregar(seleccionado);
 
                 //ventana.MdiParent = this;
-                modificar.ShowDialog();
+            modificar.ShowDialog();
+            cargarGrilla();
 
             
         }
@@ -172,5 +173,6 @@ namespace WindowsFormsApp1
             detalle.ShowDialog();
             
         }
+
     }
 }
