@@ -20,11 +20,15 @@ namespace WindowsFormsApp1
         {
             InitializeComponent();
             this.articulo = articulo;
+            Text = "Modificar articulo";
         }
+
+        
 
         public Agregar()
         {
             InitializeComponent();
+            Text = " Agregar articulo ";
             
         }
 
@@ -36,14 +40,17 @@ namespace WindowsFormsApp1
 
         private void btnAceptar_Click(object sender, EventArgs e)
         {
-            Articulo articulo = new Articulo();
+           // Articulo articulo = new Articulo();
+
             ArticuloNegocio negocio = new ArticuloNegocio();
             try
             {
-                
 
-                if(validaciones() == true)
+
+                if (validaciones() == true)
                 {
+                    if (articulo == null) { articulo = new Articulo(); }
+
                     articulo.Codigo = txtCodigo.Text;
                     articulo.Nombre = txtNombre.Text;
                     articulo.Descripcion = txtDescripcion.Text;
@@ -51,16 +58,23 @@ namespace WindowsFormsApp1
                     articulo.CategoriaArticulo = (Categoria)cboCategoria.SelectedItem;
                     articulo.Precio = float.Parse(txtPrecio.Text);
                     articulo.ImagenUrl = txtImagenUrl.Text;
-
-                    negocio.agregar(articulo);
-                    MessageBox.Show("Agregado exitosamente");
-                    Close();
                 }
+
                 else
                 {
                     MessageBox.Show("Compruebe que los campos obligatorios esten completos");
                 }
 
+                    if(articulo.Id != 0) { 
+                    negocio.modificar(articulo);
+                    MessageBox.Show("Modificado exitosamente");
+                    }
+                    else { 
+                    negocio.agregar(articulo);
+                    MessageBox.Show("Agregado exitosamente");
+                    }
+                    Close();
+               
                 
             }
             catch (Exception ex)
@@ -70,29 +84,32 @@ namespace WindowsFormsApp1
         }
 
         private void Agregar_Load(object sender, EventArgs e)
-        {
-            MarcaNegocio marcaNegocio = new MarcaNegocio();
-            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
 
+        {
+            
+                MarcaNegocio marcaNegocio = new MarcaNegocio();
+            CategoriaNegocio categoriaNegocio = new CategoriaNegocio();
+          
             try
             {
                 cboMarca.DataSource = marcaNegocio.listar();
-                cboMarca.ValueMember = "Id";
-                cboMarca.DisplayMember = "Descripcion";
+              cboMarca.ValueMember = "Id";
+              cboMarca.DisplayMember = "Descripcion";
                 cboCategoria.DataSource = categoriaNegocio.listar();
-                cboCategoria.ValueMember = "Id";
-                cboCategoria.DisplayMember = "Descripcion";
+               cboCategoria.ValueMember = "Id";
+               cboCategoria.DisplayMember = "Descripcion";
 
                 if (articulo != null)
                 {
+
                     txtCodigo.Text = articulo.Codigo;
                     txtNombre.Text = articulo.Nombre;
                     txtDescripcion.Text = articulo.Descripcion;
                     txtImagenUrl.Text = articulo.ImagenUrl;
                     cargarImagen(articulo.ImagenUrl);
                     txtPrecio.Text = articulo.Precio.ToString();
-                    cboMarca.SelectedValue = articulo.MarcaArticulo.Id;
-                    cboCategoria.SelectedValue = articulo.CategoriaArticulo.Id;
+                   cboMarca.SelectedValue = articulo.MarcaArticulo.Id;
+                   cboCategoria.SelectedValue = articulo.CategoriaArticulo.Id;
                 }
             }
             catch (Exception ex)
