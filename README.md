@@ -1,4 +1,5 @@
-SISTEMA DE GESTION DE ARTICULOS CON WINDOWS FORMS.
+### SISTEMA DE GESTION DE ARTICULOS CON WINDOWS FORMS.
+
 En esta ocasion, se realizo una aplicacion de escritorio con Windows Forms, la cual realiza un ABM sobre una base de datos.
 
 Dicha base de datos cuenta con tres tablas: Articulos, Categorias y Marcas.
@@ -7,13 +8,15 @@ Dentro del proyecto Negocio podra encontrar el script para la creacion de dicha 
 
 La estructura de nuestra solucion esta formada por 3 proyectos:
 
-a)Dominio
+a) Dominio
 
  Alli se encuentran las clases que representan a las tablas en la base de datos, con sus atributos correspondientes.
-b)Negocio
+ 
+b) Negocio
 
 Alli se encuentran las clases que se encargan de manejar la logica de nuestra aplicacion.
-c)Vistas (TpWinForms)
+
+c) Vistas (TpWinForms)
 
  Alli se encuentran las clases que se encargan de interactuar con el usuario (Forms).
 La aplicacion permite:
